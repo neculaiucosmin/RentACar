@@ -1,0 +1,22 @@
+CREATE TABLE `Client`(
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+    `nume` VARCHAR(255) NOT NULL,
+    `prenume` VARCHAR(255) NOT NULL,
+    `username` VARCHAR(255) NOT NULL UNIQUE ,
+    `password` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(255) NOT NULL UNIQUE ,
+    `dataOfJoining` DATETIME NOT NULL
+);
+
+
+CREATE TABLE `Car`(
+    `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+    `NameOfCar` VARCHAR(255) NOT NULL,
+    `ModelOfCar` VARCHAR(255) NOT NULL,
+    `Price` DOUBLE(8, 2) NOT NULL,
+    `DateOfFabrication` DATE NOT NULL,
+    `FuelType` VARCHAR(255) NOT NULL,
+    `Power` INT NOT NULL,
+    `Km` INT NOT NULL,
+    `Color` VARCHAR(255) NOT NULL
+);
