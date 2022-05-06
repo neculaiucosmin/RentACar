@@ -1,0 +1,23 @@
+{
+  "name": "rentacar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neculaiucosmin/RentACar.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neculaiucosmin/RentACar/issues"
+  },
+  "homepage": "https://github.com/neculaiucosmin/RentACar#readme",
+  "dependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}
