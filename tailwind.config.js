@@ -7,6 +7,9 @@ module.exports = {
       colors:{
         'netflixGrey':'#564d4d',
       },
+      screens:{
+        'xs':"450px",
+      }
     },
 
   },
