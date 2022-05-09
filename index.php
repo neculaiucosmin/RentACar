@@ -1,4 +1,5 @@
 <?php
+// npx tailwindcss -i ./assets/css/input.css -o ./dist/output.css --watch
 session_start();
 ?>
 

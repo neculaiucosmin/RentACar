@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       colors:{
         'netflixGrey':'#564d4d',
+        'greyTransparent':'hsla(0deg, 2%, 12%, .3)'
       },
       screens:{
         'xs':"450px",
