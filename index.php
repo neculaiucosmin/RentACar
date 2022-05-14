@@ -1,8 +1,6 @@
 <?php
 // npx tailwindcss -i ./assets/css/input.css -o ./dist/output.css --watch
 session_start();
-
-
 ?>
 
 <!doctype html>
@@ -46,6 +44,7 @@ if ($_SESSION['conectat'] === true) {
     <hr class="w-full h-2 bg-netflixGrey border-none relative">
 </div>
 <!---->
+
 <div class="flex justify-center md:justify-around flex-col md:flex-row  md:p-10 sm:p-10 text-center md:text-left">
     <div class="text-white xs:pt-10 pt-24">
         <div class="text-4xl font-semibold text-white mb-10">Bucura-te de condus.</div>
@@ -55,24 +54,64 @@ if ($_SESSION['conectat'] === true) {
     </div>
     <div class="p-20">
         <img src="./assets/images/Cars/electric/spring1.webp"
-             class="xl:w-96 md:w-72 w-full hover:scale-110 ease-linear duration-200 rounded-sm" alt="Sping">
+             class="xl:w-96 md:w-72 w-full hover:scale-110 ease-linear duration-200 rounded-sm" alt="Dacia Spring">
     </div>
 </div>
 <hr class="w-full h-2 bg-netflixGrey border-none relative">
-<div class="flex justify-center md:justify-around flex-col md:flex-row  md:p-10 sm:p-10 text-center md:text-left">
-    <div class="text-white xs:pt-10 pt-24">
-        <div class="text-4xl font-semibold text-white mb-10">Bucura-te de condus.</div>
-        <div class="text-xl font-normal text-white  mb-0 md:mb-10">Poti alege o masina <br>pentru orice fel de drum,
-            off-road,<br> autostrada, oras.
+<div class="flex justify-center md:justify-around flex-col md:flex-row-reverse  md:p-10 sm:p-10 text-center md:text-left">
+    <div class="flex flex-col justify-center items-center text-white xs:pt-10 pt-24 ">
+        <div class="text-4xl font-semibold text-white mb-10">Pret redus.</div>
+        <div class="text-xl font-normal text-white  mb-0 md:mb-10">Gasesti masina potrivita pentru orice buget
         </div>
     </div>
     <div class="p-20">
-        <img src="./assets/images/Cars/electric/spring1.webp"
+        <img src="./assets/images/Icons/cheap.jpg"
+             class="xl:w-96 md:w-72 w-full hover:scale-110 ease-linear duration-200 rounded-sm" alt="Dacia Spring">
+    </div>
+</div>
+<hr class="w-full h-2 bg-netflixGrey border-none relative">
+
+<div class="flex justify-center md:justify-around flex-col md:flex-row  md:p-10 sm:p-10 text-center md:text-left">
+    <div class="text-white xs:pt-10 pt-24">
+        <div class="text-4xl font-semibold text-white mb-10">Unde ai nevoie.</div>
+        <div class="text-xl font-normal text-white  mb-0 md:mb-10">Iti poti inchiria o masina  din peste <br>15 locatii, inclusiv  Iasi, Bucuresti,<br> Timisoara
+        </div>
+    </div>
+    <div class="p-20">
+        <img src="./assets/images/Icons/locatii.jpg"
              class="xl:w-96 md:w-72 w-full hover:scale-110 ease-linear duration-200 rounded-sm" alt="Sping">
     </div>
 </div>
 <hr class="w-full h-2 bg-netflixGrey border-none relative">
 
+<div class="flex justify-center md:justify-around flex-col md:flex-row-reverse  md:p-10 sm:p-10 text-center md:text-left">
+    <div class="flex flex-col justify-center items-center text-white xs:pt-10 pt-24 ">
+        <div class="text-4xl font-semibold text-white mb-10">Bucura-te de condus.</div>
+        <div class="text-xl font-normal text-white  mb-0 md:mb-10">Poti alege o masina <br>pentru orice fel de drum,
+            off-road,<br> autostrada, oras.
+        </div>
+    </div>
+    <div class="p-20">
+        <img src="./assets/images/Icons/cheap.jpg"
+             class="xl:w-96 md:w-72 w-full hover:scale-110 ease-linear duration-200 rounded-sm" alt="Dacia Spring">
+    </div>
+</div>
+<hr class="w-full h-2 bg-netflixGrey border-none relative">
+
+<div class="flex flex-col justify-center items-center gap-2 my-10 text-white  w-full">
+    <div class="text-4xl font-semibold text-white mb-10">Intrebari frecvente</div>
+    <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey">
+        <div>text 1</div>
+        <div> text 2</div>
+    </div>
+    <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey">
+        <div>text 1</div>
+        <div> text 2</div>
+    </div>
+
+</div>
+
+<hr class="w-full h-2 bg-netflixGrey border-none relative">
 <?php
 include "modules/footer.php";
 ?>
