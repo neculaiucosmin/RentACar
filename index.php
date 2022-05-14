@@ -100,15 +100,16 @@ if ($_SESSION['conectat'] === true) {
 
 <div class="flex flex-col justify-center items-center gap-2 my-10 text-white  w-full">
     <div class="text-4xl font-semibold text-white mb-10">Intrebari frecvente</div>
-    <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey">
-        <div>text 1</div>
-        <div> text 2</div>
-    </div>
-    <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey">
-        <div>text 1</div>
-        <div> text 2</div>
+    <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey"
+        x-data="{open:false}">
+        <div class="text-xl">Ce este RentACar?</div>
+        <img src="./assets/images/Icons/add.svg" alt="show/hide">
     </div>
 
+    <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey">
+        <div class="text-xl">Ce este RentACar?</div>
+        <img src="./assets/images/Icons/add.svg" alt="show/hide">
+    </div>
 </div>
 
 <hr class="w-full h-2 bg-netflixGrey border-none relative">
