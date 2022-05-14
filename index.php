@@ -1,6 +1,8 @@
 <?php
 // npx tailwindcss -i ./assets/css/input.css -o ./dist/output.css --watch
 session_start();
+
+
 ?>
 
 <!doctype html>
@@ -18,7 +20,12 @@ session_start();
 </head>
 <body class="w-100 h-100 bg-black -z-20">
 <?php
-include "modules/header.php";
+error_reporting(0);
+if ($_SESSION['conectat'] === true) {
+    include 'modules/footer.php';
+} else {
+    include "modules/header.php";
+}
 ?>
 <div class="relative  text-white flex flex-col justify-center items-center w-full h-fit text-center gap-11">
     <h1 class="text-4xl font-semibold   ">Ai o multime de masini,<br>pret accesibil.</h1>
@@ -38,6 +45,20 @@ include "modules/header.php";
     </form>
     <hr class="w-full h-2 bg-netflixGrey border-none relative">
 </div>
+<!---->
+<div class="flex justify-center md:justify-around flex-col md:flex-row  md:p-10 sm:p-10 text-center md:text-left">
+    <div class="text-white xs:pt-10 pt-24">
+        <div class="text-4xl font-semibold text-white mb-10">Bucura-te de condus.</div>
+        <div class="text-xl font-normal text-white  mb-0 md:mb-10">Poti alege o masina <br>pentru orice fel de drum,
+            off-road,<br> autostrada, oras.
+        </div>
+    </div>
+    <div class="p-20">
+        <img src="./assets/images/Cars/electric/spring1.webp"
+             class="xl:w-96 md:w-72 w-full hover:scale-110 ease-linear duration-200 rounded-sm" alt="Sping">
+    </div>
+</div>
+<hr class="w-full h-2 bg-netflixGrey border-none relative">
 <div class="flex justify-center md:justify-around flex-col md:flex-row  md:p-10 sm:p-10 text-center md:text-left">
     <div class="text-white xs:pt-10 pt-24">
         <div class="text-4xl font-semibold text-white mb-10">Bucura-te de condus.</div>

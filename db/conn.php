@@ -1,9 +1,9 @@
 <?php
 $link="localhost";
 $username="root";
-$pass="1234";
-$db="RentACar";
+$pass="";
+$db="pw";
 
-$conn=new mysqli($link, $username, $pass,$db);
+$conn=mysqli_connect($link, $username, $pass,$db);
 if ($conn->error)
     die("Conexiune esuata, incercati din nou".$conn->connect_error);

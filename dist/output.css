@@ -476,9 +476,9 @@ html{
   width: 100%;
 }
 
-@media (min-width: 450px) {
+@media (min-width: 400px) {
   .container {
-    max-width: 450px;
+    max-width: 400px;
   }
 }
 
@@ -595,10 +595,6 @@ html{
   z-index: 10;
 }
 
-.-z-10 {
-  z-index: -10;
-}
-
 .float-right {
   float: right;
 }
@@ -633,6 +629,10 @@ html{
 
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.mb-0 {
+  margin-bottom: 0px;
 }
 
 .mb-5 {
@@ -673,10 +673,6 @@ html{
 
 .mt-2 {
   margin-top: 0.5rem;
-}
-
-.mb-0 {
-  margin-bottom: 0px;
 }
 
 .box-border {
@@ -805,14 +801,14 @@ html{
   width: 100%;
 }
 
+.w-96 {
+  width: 24rem;
+}
+
 .w-fit {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-}
-
-.w-96 {
-  width: 24rem;
 }
 
 .w-3\/4 {
@@ -1712,6 +1708,11 @@ html{
   background-color: hsla(0deg, 2%, 12%, .3);
 }
 
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
@@ -2474,9 +2475,9 @@ body{
     width: 100%;
   }
 
-  @media (min-width: 450px) {
+  @media (min-width: 400px) {
     .sm\:container {
-      max-width: 450px;
+      max-width: 400px;
     }
   }
 
@@ -2510,28 +2511,8 @@ body{
     }
   }
 
-  .sm\:w-full {
-    width: 100%;
-  }
-
   .sm\:grid-flow-row {
     grid-auto-flow: row;
-  }
-
-  .sm\:flex-row {
-    flex-direction: row;
-  }
-
-  .sm\:flex-col {
-    flex-direction: column;
-  }
-
-  .sm\:flex-col-reverse {
-    flex-direction: column-reverse;
-  }
-
-  .sm\:justify-center {
-    justify-content: center;
   }
 
   .sm\:rounded-br-sm {
@@ -2554,10 +2535,6 @@ body{
     padding: 2.5rem;
   }
 
-  .sm\:text-center {
-    text-align: center;
-  }
-
   .sm\:underline {
     -webkit-text-decoration-line: underline;
             text-decoration-line: underline;
@@ -2567,6 +2544,10 @@ body{
 @media (min-width: 768px) {
   .md\:mb-10 {
     margin-bottom: 2.5rem;
+  }
+
+  .md\:w-2\/5 {
+    width: 40%;
   }
 
   .md\:w-72 {
@@ -2583,10 +2564,6 @@ body{
 
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:flex-row-reverse {
-    flex-direction: row-reverse;
   }
 
   .md\:justify-around {
@@ -2626,12 +2603,6 @@ body{
   }
 }
 
-@media (min-width: 1024px) {
-  .lg\:w-96 {
-    width: 24rem;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   @media (min-width: 1024px) {
     .dark\:lg\:hover\:\[paint-order\:markers\]:hover {
@@ -2658,21 +2629,13 @@ body{
   }
 }
 
-@media (min-width: 450px) {
-  .xs\:flex-col {
-    flex-direction: column;
-  }
-
+@media (min-width: 400px) {
   .xs\:flex-wrap {
     flex-wrap: wrap;
   }
 
-  .xs\:justify-center {
-    justify-content: center;
-  }
-
-  .xs\:p-10 {
-    padding: 2.5rem;
+  .xs\:p-2 {
+    padding: 0.5rem;
   }
 
   .xs\:pt-10 {

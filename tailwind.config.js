@@ -9,7 +9,7 @@ module.exports = {
         'greyTransparent':'hsla(0deg, 2%, 12%, .3)'
       },
       screens:{
-        'xs':"450px",
+        'xs':"400px",
       }
     },
 
