@@ -17,7 +17,7 @@
 </head>
 <body class="w-100 h-100 bg-black -z-20">
 <?php
-    include "modules/header.php";
+include "modules/header.php";
 ?>
 
 
@@ -70,7 +70,8 @@
 <div class="flex justify-center md:justify-around flex-col md:flex-row  md:p-10 sm:p-10 text-center md:text-left">
     <div class="text-white xs:pt-10 pt-24">
         <div class="text-4xl font-semibold text-white mb-10">Unde ai nevoie.</div>
-        <div class="text-xl font-normal text-white  mb-0 md:mb-10">Iti poti inchiria o masina  din peste <br>15 locatii, inclusiv  Iasi, Bucuresti,<br> Timisoara
+        <div class="text-xl font-normal text-white  mb-0 md:mb-10">Iti poti inchiria o masina din peste <br>15 locatii,
+            inclusiv Iasi, Bucuresti,<br> Timisoara
         </div>
     </div>
     <div class="p-20">
@@ -94,20 +95,44 @@
 </div>
 <hr class="w-full h-2 bg-netflixGrey border-none relative">
 
-<div class="flex flex-col justify-center items-center gap-2 my-10 text-white  w-full">
+<div class="flex flex-col justify-center items-center gap-2 my-10 text-white  w-full"
+     x-data="acordeon">
     <div class="text-4xl font-semibold text-white mb-10">Intrebari frecvente</div>
-    <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey"
-        x-data="{open:false}">
-        <div class="text-xl">Ce este RentACar?</div>
-        <img src="./assets/images/Icons/add.svg" alt="show/hide">
+    <div class="w-full flex flex-col justify-center items-center cursor-pointer">
+        <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey"
+             @click="selected != 1? selected=1 : selected=null">
+            <div class="text-xl">Ce este RentACar?</div>
+            <img src="./assets/images/Icons/add.svg" alt="show/hide" class="duration-75"
+                 x-bind:class="selected ==1?'transform rotate-45':''">
+        </div>
+        <div class="px-3 w-full md:w-96 lg:w-2/3 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab1"
+             :style="selected ==1 ? 'max-height: ' +$refs.tab1.scrollHeight + 'px;':''">
+            <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa itaque minus
+                nesciunt, rem sapiente veritatis?</p>
+        </div>
     </div>
 
-    <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey">
-        <div class="text-xl">Ce este RentACar?</div>
-        <img src="./assets/images/Icons/add.svg" alt="show/hide">
+    <div class="w-full flex flex-col justify-center items-center cursor-pointer">
+        <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey"
+             @click="selected != 2? selected=2 : selected=null">
+            <div class="text-xl">Ce este RentACar?</div>
+            <img src="./assets/images/Icons/add.svg" alt="show/hide" class="duration-75"
+                 x-bind:class="selected ==2?'transform rotate-45':''">
+        </div>
+        <div class="px-3 w-full md:w-96 lg:w-2/3 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab2"
+             :style="selected ==2 ? 'max-height: ' +$refs.tab2.scrollHeight + 'px;':''">
+            <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa itaque minus
+                nesciunt, rem sapiente veritatis?</p>
+        </div>
     </div>
 </div>
-
+<script>
+    function acordeon() {
+        return {
+            selected: null
+        };
+    }
+</script>
 <hr class="w-full h-2 bg-netflixGrey border-none relative">
 <?php
 include "modules/footer.php";

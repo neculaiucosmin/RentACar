@@ -18,7 +18,7 @@ $confirmaParola = trim($_POST['confirmPass']);
     <link rel="icon" href="../assets/images/Logo/Logo.svg">
     <title>Inregistreaza-te</title>
 </head>
-<body class="bg-white h-full w-full">
+<body class="bg-black h-full w-full">
 <nav class="flex flex-row justify-between w-fit p-5">
     <a href="../index.php">
         <img src="../assets/images/Logo/Logo.svg" alt="Home" width="150" height="100">
@@ -53,7 +53,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $sql = "INSERT INTO `user`(`email`, `parola`) VALUES('$email', '$passHash')";
             mysqli_query($conn, $sql);
             header("Location: ../index.php");
-            echo "Inregistrare reusita";
             mysqli_close($conn);
         } else
             echo "Parolele nu coincid";
