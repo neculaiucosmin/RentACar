@@ -1,6 +1,5 @@
 <?php
 // npx tailwindcss -i ./assets/css/input.css -o ./dist/output.css --watch
-session_start();
 ?>
 
 <!doctype html>
@@ -11,21 +10,18 @@ session_start();
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link href="../dist/output.css" rel="stylesheet">
+    <link href="./dist/output.css" rel="stylesheet">
 
     <link rel="icon" href="./assets/images/Logo/Logo.svg">
     <title>Rent A Car</title>
 </head>
 <body class="w-100 h-100 bg-black -z-20">
 <?php
-error_reporting(0);
-if ($_SESSION['conectat'] === true) {
-    include 'modules/footer.php';
-} else {
     include "modules/header.php";
-}
 ?>
-<div class="relative  text-white flex flex-col justify-center items-center w-full h-fit text-center gap-11">
+
+
+<div class="relative text-white flex flex-col justify-center items-center w-full h-fit text-center gap-11">
     <h1 class="text-4xl font-semibold   ">Ai o multime de masini,<br>pret accesibil.</h1>
     <h2 class="text-xl font-normal">Inchiriaza oricand, de oriunde.</h2>
     <form method="post" class="mb-10">

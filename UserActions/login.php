@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             session_start();
                             $_SESSION['conectat'] = true;
                             $_SESSION['utilizator'] = $email;
-                            header("Location: ../index.html");
+                            header("Location: ../index.php");
                         } else {
                             $eroare_conectare = " parola gresita";
                         }
