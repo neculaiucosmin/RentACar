@@ -18,13 +18,21 @@
 <body class="w-100 h-100 bg-black -z-20">
 <?php
 include "modules/header.php";
+
+$caut = $err_caut = "";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    if (isset($_POST['cauta']) && !empty($_POST['cauta'])) {
+        $caut = trim($_POST['cauta']);
+        $_SESSION['cauta'] = mb_strtolower($caut);
+    } else
+        $_SESSION['cauta'] = "dacia";
+}
 ?>
-
-
 <div class="relative text-white flex flex-col justify-center items-center w-full h-fit text-center gap-11">
     <h1 class="text-4xl font-semibold   ">Ai o multime de masini,<br>pret accesibil.</h1>
     <h2 class="text-xl font-normal">Inchiriaza oricand, de oriunde.</h2>
-    <form method="post" class="mb-10">
+    <form method="post" action="cautare.php" class="mb-10">
         <label for="cauta">Pregatit de cautare? Introdu numele marcii pe care o doriti.</label><br>
         <div class="grid md:grid-flow-col sm:grid-flow-row z-10">
             <input type="text" id="cauta" name="cauta"
@@ -100,13 +108,13 @@ include "modules/header.php";
     <div class="text-4xl font-semibold text-white mb-10">Intrebari frecvente</div>
     <div class="w-full flex flex-col justify-center items-center cursor-pointer">
         <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey"
-             @click="selected != 1? selected=1 : selected=null">
+             @click="selected !== 1? selected=1 : selected=null">
             <div class="text-xl">Ce este RentACar?</div>
             <img src="./assets/images/Icons/add.svg" alt="show/hide" class="duration-75"
-                 x-bind:class="selected ==1?'transform rotate-45':''">
+                 x-bind:class="selected ===1?'transform rotate-45':''">
         </div>
         <div class="px-3 w-full md:w-96 lg:w-2/3 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab1"
-             :style="selected ==1 ? 'max-height: ' +$refs.tab1.scrollHeight + 'px;':''">
+             :style="selected ===1 ? 'max-height: ' +$refs.tab1.scrollHeight + 'px;':''">
             <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa itaque minus
                 nesciunt, rem sapiente veritatis?</p>
         </div>
@@ -114,13 +122,13 @@ include "modules/header.php";
 
     <div class="w-full flex flex-col justify-center items-center cursor-pointer">
         <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey"
-             @click="selected != 2? selected=2 : selected=null">
+             @click="selected !== 2? selected=2 : selected=null">
             <div class="text-xl">Ce este RentACar?</div>
             <img src="./assets/images/Icons/add.svg" alt="show/hide" class="duration-75"
-                 x-bind:class="selected ==2?'transform rotate-45':''">
+                 x-bind:class="selected ===2?'transform rotate-45':''">
         </div>
         <div class="px-3 w-full md:w-96 lg:w-2/3 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab2"
-             :style="selected ==2 ? 'max-height: ' +$refs.tab2.scrollHeight + 'px;':''">
+             :style="selected ===2 ? 'max-height: ' +$refs.tab2.scrollHeight + 'px;':''">
             <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa itaque minus
                 nesciunt, rem sapiente veritatis?</p>
         </div>

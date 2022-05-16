@@ -24,7 +24,7 @@ $confirmaParola = trim($_POST['confirmPass']);
         <img src="../assets/images/Logo/Logo.svg" alt="Home" width="150" height="100">
     </a>
 </nav>
-<div class="relative flex flex-col justify-center items-center cen bg-greyTransparent w-96 rounded-lg">
+<div class="relative flex flex-col justify-center items-center cen mt-32 bg-greyTransparent w-96 rounded-lg">
     <div class="text-white text-4xl mt-10">Inregistreaza-te</div>
     <form method="post" action="register.php" class="flex flex-col mt-14 w-3/4">
         <label for="email" class="mb-1 text-white">Email</label>
@@ -42,7 +42,7 @@ $confirmaParola = trim($_POST['confirmPass']);
         </button>
     </form>
     <div class="text-gray-600 mb-10 mt-5">Ai deja un cont? <a href="../UserActions/login.php"
-                                                              class="decoration-0 text-white ml-1"> Inregistreaza-te</a>
+                                                              class="decoration-0 text-white ml-1"> Conecteaza-te</a>
     </div>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

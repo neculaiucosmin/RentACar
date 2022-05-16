@@ -99,7 +99,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </button>
     </form>
     <div class="text-gray-600 mb-10 mt-5">Nu ai un cont? <a href="../UserActions/register.php"
-                                                            class="decoration-0 text-white ml-1">Conecteaza-te</a>
+                                                            class="decoration-0 text-white ml-1">Inregistreaza-te</a>
     </div>
 </div>
 </body>
