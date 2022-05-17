@@ -61,7 +61,7 @@ CREATE TABLE drive (
                        drive_descrip VARCHAR(10),
                        PRIMARY KEY (drive_id)
 );
-
+ENABLE
 INSERT INTO transmission (transmission_id, transmission_descrip)
 VALUES (1, 'Auto'), (2, '4-speed manual'), (3, '5-speed manual');
 

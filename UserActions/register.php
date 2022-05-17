@@ -52,8 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $passHash=password_hash($parola, PASSWORD_BCRYPT);
             $sql = "INSERT INTO `user`(`email`, `parola`) VALUES('$email', '$passHash')";
             mysqli_query($conn, $sql);
-            header("Location: ../index.php");
             mysqli_close($conn);
+            header("Location: ../index.php");
         } else
             echo "Parolele nu coincid";
     }

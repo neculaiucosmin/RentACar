@@ -9,7 +9,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="//unpkg.com/alpinejs" defer></script>
     <link href="./dist/output.css" rel="stylesheet">
 
     <link rel="icon" href="./assets/images/Logo/Logo.svg">
@@ -129,6 +128,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="px-3 w-full md:w-96 lg:w-2/3 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab2"
              :style="selected ===2 ? 'max-height: ' +$refs.tab2.scrollHeight + 'px;':''">
+            <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa itaque minus
+                nesciunt, rem sapiente veritatis?</p>
+        </div>
+    </div>
+    <div class="w-full flex flex-col justify-center items-center cursor-pointer">
+        <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey"
+             @click="selected !== 3? selected=3 : selected=null">
+            <div class="text-xl">Ce este RentACar?</div>
+            <img src="./assets/images/Icons/add.svg" alt="show/hide" class="duration-75"
+                 x-bind:class="selected ===3?'transform rotate-45':''">
+        </div>
+        <div class="px-3 w-full md:w-96 lg:w-2/3 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab3"
+             :style="selected ===3 ? 'max-height: ' +$refs.tab3.scrollHeight + 'px;':''">
             <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa itaque minus
                 nesciunt, rem sapiente veritatis?</p>
         </div>
