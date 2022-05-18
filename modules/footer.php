@@ -15,6 +15,5 @@
             <a href="#" class="hover:text-white cursor-pointer duration-75">Preturi</a>
             <a href="#" class="hover:text-white cursor-pointer duration-75">Abonamente</a>
         </div>
-
     </div>
 </footer>
