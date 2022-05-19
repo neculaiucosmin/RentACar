@@ -7,8 +7,8 @@
         </div>
         <div class="flex flex-col">
             <a href="#" class="hover:text-white cursor-pointer duration-75">Cont</a>
-            <a href="#" class="hover:text-white cursor-pointer duration-75">Login</a>
-            <a href="#" class="hover:text-white cursor-pointer duration-75">Register</a>
+            <a href="../UserActions/login.php" class="hover:text-white cursor-pointer duration-75">Login</a>
+            <a href="../UserActions/register.php" class="hover:text-white cursor-pointer duration-75">Register</a>
         </div>
         <div class="flex flex-col">
             <a href="#" class="hover:text-white cursor-pointer duration-75">Marci</a>

@@ -12,6 +12,7 @@
 <body class="bg-black">
 <?php
 include "modules/header.php";
+include "./db/conn.php";
 require_once "./db/conn.php";
 $nume = $prenume = $email = $telefon = $judet = $varsta = $mesaj = "";
 
@@ -30,7 +31,7 @@ if ($_SERVER['REQUEST_TIME'] == 'get') {
         $sql = "INSERT INTO `contact` (`prenume`, `nume`, `telefon`, `email`, `judet`, `varsta`, `mesaj`) 
 VALUES ('$prenume','$nume','$telefon','$email','$judet', '$varsta', '$mesaj')";
 
-        if (mysqli_query($conn, $sql)) {
+        if (mysqli_query(conexiune(), $sql)) {
             echo "Trimis!!!";
         }
     }
@@ -47,37 +48,37 @@ VALUES ('$prenume','$nume','$telefon','$email','$judet', '$varsta', '$mesaj')";
         </div>
         <fieldset>
             <div class="grid  grid-cols-2 gap-11 mt-5">
-                <input class="p-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
+                <input class="p-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none filtru"
                        type="text" name="prenume" id="prenume"
                        placeholder="Prenume" required>
-                <input class="p-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
+                <input class="p-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none filtru"
                        type="text" name="nume" id="nume"
                        placeholder="Nume" required>
             </div>
             <div class="grid  grid-cols-2 gap-11 mt-5">
-                <input class="p-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
+                <input class="p-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none filtru"
                        type="text" name="telefon" id="telefon"
                        placeholder="Telefon" required>
-                <input class="p-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
+                <input class="p-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none filtru"
                        type="email" name="email" id="email"
                        placeholder="Email" required>
             </div>
             <div class="grid  grid-cols-2 gap-11 mt-5">
                 <select name="judet"
-                        class="p-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none">
+                        class="p-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none filtru">
                     <option value="" selected>Judet</option>
                     <option value="Alba">Alba</option>
                     <option value="Arad">Arad</option>
                     <option value="Prahova">Prahova</option>
                     <option value="Bucuresti">Bucuresti</option>
                 </select>
-                <input class="p-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
+                <input class="p-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none filtru"
                        type="number" name="varsta" id="varsta" max="100"
                        placeholder="Varsta" required>
             </div>
             <div class="mt-12">
                 <textarea
-                        class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none"
+                        class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-gray-500 focus:outline-none filtru"
                         name="mesaj" placeholder="Mesaj"></textarea>
             </div>
             <div class="ty-6">

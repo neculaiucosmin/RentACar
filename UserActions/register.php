@@ -1,8 +1,23 @@
 <?php session_start();
 require_once "../db/conn.php";
-$email = trim($_POST['email']);
-$parola = trim($_POST['parola']);
-$confirmaParola = trim($_POST['confirmPass']);
+//$email = trim($_POST['email']);
+//$parola = trim($_POST['parola']);
+//$confirmaParola = trim($_POST['confirmPass']);
+include "../validator.php";
+
+function insereazaUtilizator($e, $p, $cp)
+{
+    //e=email, p=parola, cp =confirma parola
+    if (($p == $cp) && isset($e)) {
+        $passHash = password_hash($p, PASSWORD_BCRYPT);
+        $sql = "INSERT INTO `user`(`email`, `parola`) VALUES('$e', '$passHash')";
+        mysqli_query(conexiune(), $sql);
+        mysqli_close(conexiune());
+        header("Location: ../index.php");
+    } else
+        echo "Parolele nu coincid";
+}
+
 ?>
 
 <!doctype html>
@@ -44,20 +59,34 @@ $confirmaParola = trim($_POST['confirmPass']);
     <div class="text-gray-600 mb-10 mt-5">Ai deja un cont? <a href="../UserActions/login.php"
                                                               class="decoration-0 text-white ml-1"> Conecteaza-te</a>
     </div>
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['trimite'])) {
+    <?php
 
-        if (($parola == $confirmaParola)&& isset($email)) {
-            $passHash=password_hash($parola, PASSWORD_BCRYPT);
-            $sql = "INSERT INTO `user`(`email`, `parola`) VALUES('$email', '$passHash')";
-            mysqli_query($conn, $sql);
-            mysqli_close($conn);
-            header("Location: ../index.php");
-        } else
-            echo "Parolele nu coincid";
+    $email = $parola = $confirmaParola = "";
+    $email_err = $parola_err = $confirmaParola_err = "";
+
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['trimite'])) {
+            if (empty(trim($_POST['email'])))
+                $eroare_email = "Va rugam introduceti o adresa de email";
+            else
+                $email = $_POST['email'];
+
+            if (empty(trim($_POST['parola'])))
+                $eroare_email = "Va rugam introduceti  parola";
+            else
+                $parola = $_POST['parola'];
+
+
+            if (empty(trim($_POST['parola'])))
+                $eroare_email = "Va rugam introduceti  parola";
+            else
+                $confirmaParola = $_POST['parola'];
+
+            if (validator::validareParole($parola))
+                insereazaUtilizator($email, $parola, $confirmaParola);
+        }
     }
-}
-?>
+    ?>
 </div>
 </body>
