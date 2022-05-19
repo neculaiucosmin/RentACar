@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($eroare_email) && empty($eroare_parola)) {
         $sql = "SELECT id, email, parola FROM user WHERE email=?";
-        if ($stmt = mysqli_prepare($conn, $sql)) {
+        if ($stmt = mysqli_prepare(conexiune(), $sql)) {
             mysqli_stmt_bind_param($stmt, "s", $parm_emal);
             $parm_emal = $email;
 
@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             mysqli_stmt_close($stmt);
         }
-        mysqli_close($conn);
+        mysqli_close(conexiune());
     }
 }
 

@@ -1,5 +1,5 @@
 <?php session_start();
-require_once "../db/conn.php";
+include "../db/conn.php";
 //$email = trim($_POST['email']);
 //$parola = trim($_POST['parola']);
 //$confirmaParola = trim($_POST['confirmPass']);

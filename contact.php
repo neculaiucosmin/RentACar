@@ -13,29 +13,29 @@
 <?php
 include "modules/header.php";
 include "./db/conn.php";
-require_once "./db/conn.php";
+require_once "validator.php";
 $nume = $prenume = $email = $telefon = $judet = $varsta = $mesaj = "";
 
-if ($_SERVER['REQUEST_TIME'] == 'get') {
-    if (isset($_GET['trimis'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-        $nume = filter_input($_GET['nume']);
-        $prenume = filter_input($_GET['prenume']);
-        $email = filter_input($_GET['email']);
-        $telefon = filter_input($_GET['telefon']);
-        $judet = filter_input($_GET['judet']);
-        $varsta = filter_input($_GET['varsta']);
-        $mesaj = filter_input($_GET['mesaj']);
+    if (isset($_GET['trimite'])) {
 
-
-        $sql = "INSERT INTO `contact` (`prenume`, `nume`, `telefon`, `email`, `judet`, `varsta`, `mesaj`) 
-VALUES ('$prenume','$nume','$telefon','$email','$judet', '$varsta', '$mesaj')";
-
-        if (mysqli_query(conexiune(), $sql)) {
-            echo "Trimis!!!";
-        }
+        $nume = /*filter_input(INPUT_POST, */
+            $_GET['nume'];
+        $prenume = /*filter_input(INPUT_POST, */
+            $_GET['prenume'];
+        $telefon = /*filter_input(INPUT_POST, */
+            $_GET['telefon'];
+        $email = /*filter_input(INPUT_POST, */
+            $_GET['email'];
+        $judet = /*filter_input(INPUT_POST, */
+            $_GET['judet'];
+        $varsta = /*filter_input(INPUT_POST, */
+            $_GET['varsta'];
+        $mesaj = /*filter_input(INPUT_POST, */
+            $_GET['mesaj'];
+            validator::TrimiteMesaj(conexiune(),$nume,$prenume,$telefon,$email,$judet,$varsta,$mesaj);
     }
-
 }
 
 
@@ -82,7 +82,7 @@ VALUES ('$prenume','$nume','$telefon','$email','$judet', '$varsta', '$mesaj')";
                         name="mesaj" placeholder="Mesaj"></textarea>
             </div>
             <div class="ty-6">
-                <button type="button" name="trimite" class="w-full my-6 bg-red-600 text-white p-3 rounded-md text-xl">
+                <button type="submit" name="trimite" class="w-full my-6 bg-red-600 text-white p-3 rounded-md text-xl">
                     TRIMITE
                 </button>
             </div>

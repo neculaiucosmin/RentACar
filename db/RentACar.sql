@@ -46,7 +46,7 @@ INSERT INTO contact(prenume, nume, telefon, email, judet, varsta, mesaj)
     VALUE ('Cosmin', 'Neculaiu','0734856045', 'cosminflorinel23@gmail.com', 'Prahova', 18, 'Acesta este un mesaj xD' );
 
 
-SELECT * FROM user;
+SELECT * FROM contact;
 
 
 
