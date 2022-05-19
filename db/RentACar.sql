@@ -27,8 +27,32 @@ FROM user
 WHERE email = 'test@test.com';
 
 
-CREATE TABLE `producator`(id INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
-`nume` VARCHAR(100));
+CREATE TABLE `producator`
+(
+    id     INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `nume` VARCHAR(100)
+);
+
+USE pw;
+
+CREATE TABLE contact
+(
+    `ID`      INT AUTO_INCREMENT PRIMARY KEY,
+    `prenume` varchar(255),
+    `nume`    varchar(255),
+    `telefon` varchar(255),
+    `email`   varchar(255),
+    `judet`   varchar(255),
+    `varsta`  int,
+    `mesaj`   text
+
+);
+
+INSERT INTO contact(prenume, nume, telefon, email, judet, varsta, mesaj)
+    VALUE ('Cosmin', 'Neculaiu','0734856045', 'cosminflorinel23@gmail.com', 'Prahova', 18, 'Acesta este un mesaj xD' );
+SELECT * FROM contact;
+
+
 #
 # DB relatii intre masina->producator->etc.
 #
