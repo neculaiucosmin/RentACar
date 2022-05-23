@@ -6,7 +6,7 @@ if (isset($_SESSION['conectat']) && $_SESSION['conectat'] === true) {
 
 require_once "../db/conn.php";
 
-$email = $parola = "";
+$email = $parola = $tipCont = "";
 
 $eroare_email = $eroare_parola = $eroare_conectare = "";
 
@@ -22,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $parola = $_POST['parola'];
 
     if (empty($eroare_email) && empty($eroare_parola)) {
-        $sql = "SELECT id, email, parola FROM user WHERE email=?";
-        if ($stmt = mysqli_prepare(conexiune(), $sql)) {
+        $sql = "SELECT id, email, parola, tipCont FROM user WHERE email=?";
+        if ($stmt = mysqli_prepare($conn, $sql)) {
             mysqli_stmt_bind_param($stmt, "s", $parm_emal);
             $parm_emal = $email;
 
@@ -31,13 +31,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 mysqli_stmt_store_result($stmt);
 
                 if (mysqli_stmt_num_rows($stmt) == 1) {
-                    mysqli_stmt_bind_result($stmt, $id, $email, $hash_pass);
+                    mysqli_stmt_bind_result($stmt, $id, $email, $hash_pass, $tipCont);
                     if (mysqli_stmt_fetch($stmt)) {
+                        echo "<div class='text-white'>" . $tipCont . "</div>";
                         if (password_verify($parola, $hash_pass)) {
                             session_start();
                             $_SESSION['conectat'] = true;
                             $_SESSION['utilizator'] = $email;
-                            header("Location: ../index.php");
+                            $_SESSION['tipCont'] = $tipCont;
+                            if ($_SESSION['tipCont'] == "client") {
+                                header("Location: ../index.php");
+                            }else
+                                header("Location: ../dashboard.php");
                         } else {
                             $eroare_conectare = " parola gresita";
                         }
@@ -50,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             mysqli_stmt_close($stmt);
         }
-        mysqli_close(conexiune());
+        mysqli_close($conn);
     }
 }
 

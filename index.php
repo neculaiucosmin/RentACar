@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!---->
 
 <div class="flex justify-center md:justify-around flex-col md:flex-row  md:p-10 sm:p-10 text-center md:text-left">
-    <div class="text-white xs:pt-10 pt-24">
+    <div class="flex flex-col justify-center items-center text-white xs:pt-10 pt-24">
         <div class="text-4xl font-semibold text-white mb-10">Bucura-te de condus.</div>
         <div class="text-xl font-normal text-white  mb-0 md:mb-10">Poti alege o masina <br>pentru orice fel de drum,
             off-road,<br> autostrada, oras.
@@ -60,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
              class="xl:w-96 md:w-72 w-full hover:scale-110 ease-linear duration-200 rounded-sm" alt="Dacia Spring">
     </div>
 </div>
+
 <hr class="w-full h-2 bg-netflixGrey border-none relative">
 <div class="flex justify-center md:justify-around flex-col md:flex-row-reverse  md:p-10 sm:p-10 text-center md:text-left">
     <div class="flex flex-col justify-center items-center text-white xs:pt-10 pt-24 ">
@@ -75,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <hr class="w-full h-2 bg-netflixGrey border-none relative">
 
 <div class="flex justify-center md:justify-around flex-col md:flex-row  md:p-10 sm:p-10 text-center md:text-left">
-    <div class="text-white xs:pt-10 pt-24">
+    <div class="flex flex-col justify-center items-center text-white xs:pt-10 pt-24">
         <div class="text-4xl font-semibold text-white mb-10">Unde ai nevoie.</div>
         <div class="text-xl font-normal text-white  mb-0 md:mb-10">Iti poti inchiria o masina din peste <br>15 locatii,
             inclusiv Iasi, Bucuresti,<br> Timisoara
@@ -89,30 +90,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <hr class="w-full h-2 bg-netflixGrey border-none relative">
 
 <div class="flex justify-center md:justify-around flex-col md:flex-row-reverse  md:p-10 sm:p-10 text-center md:text-left">
-    <div class="flex flex-col justify-center items-center text-white xs:pt-10 pt-24 ">
-        <div class="text-4xl font-semibold text-white mb-10">Bucura-te de condus.</div>
+    <div class="flex flex-col justify-center items-center text-white xs:pt-10 pt-24">
+        <div class="text-4xl font-semibold text-white mb-5 text-center">Alege dintr-o gama <br>larga de modele.</div>
         <div class="text-xl font-normal text-white  mb-0 md:mb-10">Poti alege o masina <br>pentru orice fel de drum,
             off-road,<br> autostrada, oras.
         </div>
     </div>
     <div class="p-20">
-        <img src="./assets/images/Icons/cheap.jpg"
+        <img src="./assets/images/Icons/car_logos.jpg"
              class="xl:w-96 md:w-72 w-full hover:scale-110 ease-linear duration-200 rounded-sm" alt="Dacia Spring">
     </div>
 </div>
 <hr class="w-full h-2 bg-netflixGrey border-none relative">
 
+
 <div class="flex flex-col justify-center items-center gap-2 my-10 text-white  w-full"
      x-data="acordeon">
     <div class="text-4xl font-semibold text-white mb-10">Intrebari frecvente</div>
     <div class="w-full flex flex-col justify-center items-center cursor-pointer">
-        <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey"
+        <div class="flex flex-row justify-between items-center px-3 w-full md:w-3/4 lg:w-3/5 h-14 bg-netflixGrey"
              @click="selected !== 1? selected=1 : selected=null">
-            <div class="text-xl">Ce este RentACar?</div>
+            <div class="text-xl">Ce este RentACar ?</div>
             <img src="./assets/images/Icons/add.svg" alt="show/hide" class="duration-75"
                  x-bind:class="selected ===1?'transform rotate-45':''">
         </div>
-        <div class="px-3 w-full md:w-96 lg:w-2/3 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab1"
+        <div class="px-3 w-full md:w-3/4 lg:w-3/5 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab1"
              :style="selected ===1 ? 'max-height: ' +$refs.tab1.scrollHeight + 'px;':''">
             <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa itaque minus
                 nesciunt, rem sapiente veritatis?</p>
@@ -120,27 +122,40 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 
     <div class="w-full flex flex-col justify-center items-center cursor-pointer">
-        <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey"
+        <div class="flex flex-row justify-between items-center px-3 w-full md:w-3/4 lg:w-3/5 h-14 bg-netflixGrey"
              @click="selected !== 2? selected=2 : selected=null">
-            <div class="text-xl">Ce este RentACar?</div>
+            <div class="text-xl">De ce sa alegi RentACar ?</div>
             <img src="./assets/images/Icons/add.svg" alt="show/hide" class="duration-75"
                  x-bind:class="selected ===2?'transform rotate-45':''">
         </div>
-        <div class="px-3 w-full md:w-96 lg:w-2/3 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab2"
+        <div class="px-3 w-full md:w-3/4 lg:w-3/5 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab2"
              :style="selected ===2 ? 'max-height: ' +$refs.tab2.scrollHeight + 'px;':''">
             <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa itaque minus
                 nesciunt, rem sapiente veritatis?</p>
         </div>
     </div>
     <div class="w-full flex flex-col justify-center items-center cursor-pointer">
-        <div class="flex flex-row justify-between items-center px-3 w-full md:w-96 lg:w-2/3 h-14 bg-netflixGrey"
+        <div class="flex flex-row justify-between items-center px-3 w-full md:w-3/4 lg:w-3/5 h-14 bg-netflixGrey"
              @click="selected !== 3? selected=3 : selected=null">
-            <div class="text-xl">Ce este RentACar?</div>
+            <div class="text-xl">Cat costa RentACar ?</div>
             <img src="./assets/images/Icons/add.svg" alt="show/hide" class="duration-75"
                  x-bind:class="selected ===3?'transform rotate-45':''">
         </div>
-        <div class="px-3 w-full md:w-96 lg:w-2/3 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab3"
+        <div class="px-3 w-full md:w-3/4 lg:w-3/5 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab3"
              :style="selected ===3 ? 'max-height: ' +$refs.tab3.scrollHeight + 'px;':''">
+            <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa itaque minus
+                nesciunt, rem sapiente veritatis?</p>
+        </div>
+    </div>
+    <div class="w-full flex flex-col justify-center items-center cursor-pointer">
+        <div class="flex flex-row justify-between items-center px-3 w-full md:w-3/4 lg:w-3/5 h-14 bg-netflixGrey"
+             @click="selected !== 4? selected=4 : selected=null">
+            <div class="text-xl">Pot anula o comanda?</div>
+            <img src="./assets/images/Icons/add.svg" alt="show/hide" class="duration-75"
+                 x-bind:class="selected ===4?'transform rotate-45':''">
+        </div>
+        <div class="px-3 w-full md:w-3/4 lg:w-3/5 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab4"
+             :style="selected ===4 ? 'max-height: ' +$refs.tab4.scrollHeight + 'px;':''">
             <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa itaque minus
                 nesciunt, rem sapiente veritatis?</p>
         </div>

@@ -12,10 +12,13 @@ CREATE TABLE `user`
     `id`     int(11)      NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `email`  varchar(100) NOT NULL,
     `parola` varchar(255) NOT NULL,
+    `tipCont` varchar(25) NOT NULL DEFAULT 'client',
     `uTime`  timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP()
+
 
 ) ENGINE = InnoDB
   DEFAULT CHARSET = latin1;
+
 
 INSERT INTO `user`(`email`, `parola`)
 VALUES ('cosmin@cosmin.ro', '1234');
@@ -46,7 +49,7 @@ INSERT INTO contact(prenume, nume, telefon, email, judet, varsta, mesaj)
     VALUE ('Cosmin', 'Neculaiu','0734856045', 'cosminflorinel23@gmail.com', 'Prahova', 18, 'Acesta este un mesaj xD' );
 
 
-SELECT * FROM contact;
+SELECT * FROM user;
 
 
 

@@ -2765,6 +2765,10 @@ body{
   .lg\:w-2\/3 {
     width: 66.666667%;
   }
+
+  .lg\:w-3\/5 {
+    width: 60%;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
