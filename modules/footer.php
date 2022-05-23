@@ -12,7 +12,7 @@
         </div>
         <div class="flex flex-col">
             <a href="#" class="hover:text-white cursor-pointer duration-75">Marci</a>
-            <a href="#" class="hover:text-white cursor-pointer duration-75">Preturi</a>
+            <a href="../preturi.php" class="hover:text-white cursor-pointer duration-75">Preturi</a>
             <a href="#" class="hover:text-white cursor-pointer duration-75">Abonamente</a>
         </div>
     </div>

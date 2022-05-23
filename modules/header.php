@@ -4,12 +4,15 @@ session_start();
 <head>
     <link href="./dist/output.css" rel="stylesheet">
     <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://kit.fontawesome.com/8fb6d7c8f9.js" crossorigin="anonymous"></script>
 </head>
 <!doctype html>
 <html lang="ro">
 
 <nav class="flex justify-between bg-transparent px-5 py-3 scroll-my-3 p-10">
-    <a href="../index.php"><img src="../assets/images/Logo/Logo.svg" alt="Acasa" width="100" height="150"></a>
+    <a href="../index.php" class="flex flex-col justify-center items-center">
+        <img src="../assets/images/Logo/Logo.svg" alt="Acasa" width="100" height="150">
+    </a>
 
     <?php
     if (isset($_SESSION['conectat']) && $_SESSION['conectat'] === true) {
