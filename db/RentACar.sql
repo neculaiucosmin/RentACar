@@ -24,14 +24,6 @@ INSERT INTO `user`(`email`, `parola`)
 VALUES ('cosmin@cosmin.ro', '1234');
 
 
-CREATE TABLE `producator`
-(
-    id     INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    `nume` VARCHAR(100)
-);
-
-USE pw;
-
 CREATE TABLE contact
 (
     `ID`      INT AUTO_INCREMENT PRIMARY KEY,

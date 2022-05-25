@@ -53,7 +53,7 @@ include "./modules/header.php";
     </div>
 
     <div class="flex flex-col md:flex-row justify-center md:justify-start border-none md:border my-10 mx-10 lg:mx-auto md:my-24 font-Raleway w-96">
-        <div class="flex flex-col border relative  bottom-auto lg:bottom-20">
+        <div class="flex flex-col border relative  bottom-auto md:bottom-0 lg:bottom-16">
             <div class="cursor-pointer drop-shadow-md md:drop-shadow-xl px-5 py-10  w-full">
                 <div class="flex flex-row justify-between items-center">
                     <div class="text-2xl font-semibold">Comfort</div>
