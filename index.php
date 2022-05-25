@@ -24,8 +24,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (isset($_POST['cauta']) && !empty($_POST['cauta'])) {
         $caut = trim($_POST['cauta']);
         $_SESSION['cauta'] = mb_strtolower($caut);
+        header("Location: ./cautare.php");
     } else
         $_SESSION['cauta'] = "dacia";
+        header("Location: ./cautare.php");
 }
 ?>
 <div class="relative text-white flex flex-col justify-center items-center w-full h-fit text-center gap-11">

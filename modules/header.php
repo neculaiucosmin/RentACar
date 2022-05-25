@@ -36,6 +36,4 @@ session_start();
     END;
     }
     ?>
-
-
 </nav>

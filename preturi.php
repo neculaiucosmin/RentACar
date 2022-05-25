@@ -121,12 +121,13 @@ include "./modules/header.php";
         </div>
     </div>
 </div>
-</body>
-</html>
-
-
 <div class="bg-greyTransparent">
     <?php
     include "./modules/footer.php";
     ?>
 </div>
+</body>
+</html>
+
+
+
