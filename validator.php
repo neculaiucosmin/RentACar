@@ -34,6 +34,7 @@ VALUES (?,?,?,?,?,?,?)";
             $param_mesaj = $msg;
             if (mysqli_stmt_execute($stmt)) {
                 mysqli_stmt_store_result($stmt);
+                echo '<div class="flex justify-center h-10 w-fit p-3 bg-green-600 text-white self-center"><p>Mesajul a fost trimis</p></div>';
             } else echo "Ceva nu a mers bine, va rugam incercati mai tarziu";
         }
     }

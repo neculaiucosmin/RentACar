@@ -32,7 +32,6 @@ try {
                 <div class="border-blue-600">
                     <div class="border-blue-600">
                         <?php
-                        //Query for Listing count
                         $searchdata = $_POST['cauta'];
                         $sql = "SELECT tblvehicles.id from tblvehicles 
                         join tblbrands on tblbrands.id=tblvehicles.VehiclesBrand 
@@ -43,7 +42,7 @@ try {
                         $results = $query->fetchAll(PDO::FETCH_OBJ);
                         $cnt = $query->rowCount();
                         ?>
-                        <p class="text-4xl"><span><?php echo htmlentities($cnt); ?> Listings found againt search</span></p>
+                        <p class="text-4xl"><span><?php echo htmlentities($cnt); ?> Masini gasite</span></p>
                     </div>
                 </div>
 
@@ -67,11 +66,11 @@ try {
                                 <h5>
                                     <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?>
                                         , <?php echo htmlentities($result->VehiclesTitle); ?></a></h5>
-                                <p class="list-price">$<?php echo htmlentities($result->PricePerDay); ?> Per Day</p>
+                                <p class="list-price">RON <?php echo htmlentities($result->PricePerDay); ?> Pe zi</p>
                                 <ul>
                                     <li><i class="fa fa-user"
                                            aria-hidden="true"></i><?php echo htmlentities($result->SeatingCapacity); ?>
-                                        seats
+                                        scaune
                                     </li>
                                     <li><i class="fa fa-calendar"
                                            aria-hidden="true"></i><?php echo htmlentities($result->ModelYear); ?> model
@@ -79,8 +78,7 @@ try {
                                     <li><i class="fa fa-car"
                                            aria-hidden="true"></i><?php echo htmlentities($result->FuelType); ?></li>
                                 </ul>
-                                <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>" class="btn">View
-                                    Details <span class="angle_arrow"><i class="fa fa-angle-right"
+                                <a href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>" class="btn">Detalii <span class="angle_arrow"><i class="fa fa-angle-right"
                                                                          aria-hidden="true"></i></span></a>
                             </div>
                         </div>
@@ -88,11 +86,10 @@ try {
                 } ?>
             </div>
 
-            <!--Side-Bar-->
             <aside class="col-md-3 col-md-pull-9">
                 <div class="border p-5">
                     <div class="widget_heading">
-                        <h5><i class="fa fa-filter" aria-hidden="true"></i> Find Your Car </h5>
+                        <h5><i class="fa fa-filter" aria-hidden="true"></i> Gaseste-ti masina </h5>
                     </div>
                     <div class="sidebar_filter">
                         <form action="#" method="get">
@@ -154,7 +151,7 @@ try {
                                                     href="vehical-details.php?vhid=<?php echo htmlentities($result->id); ?>"><?php echo htmlentities($result->BrandName); ?>
                                                 , <?php echo htmlentities($result->VehiclesTitle); ?></a>
                                             <p class="text-lg font-semibold">$<?php echo htmlentities($result->PricePerDay); ?>
-                                                Per Day</p>
+                                                Pe zi</p>
                                         </div>
                                     </li>
                                 <?php }
@@ -164,9 +161,10 @@ try {
                     </div>
                 </div>
             </aside>
-            <!--/Side-Bar-->
         </div>
     </div>
 </section>
+
+
 </body>
 </html>

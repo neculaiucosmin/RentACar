@@ -24,7 +24,7 @@ session_start();
         </div>
         <div class="absolute flex flex-col gap-2 mt-5 py-5 px-1 bg-netflixGrey rounded-sm w-full h-fit text-white"
         x-show="toggle">
-            <a href="../UserActions/log-out.php" class="decoration-0 h-2 w-full h-full p-1 rounded-sm cursor-pointer z-10">Cont</a>
+            <a href="../cont.php" class="decoration-0 h-2 w-full h-full p-1 rounded-sm cursor-pointer z-10">Cont</a>
             <a href="../UserActions/log-out.php" class="decoration-0 h-2 w-full h-full p-1 rounded-sm cursor-pointer z-10">Deconecteaza-te</a>
         </div>
     </div>';

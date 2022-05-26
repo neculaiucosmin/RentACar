@@ -118,8 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="px-3 w-full md:w-3/4 lg:w-3/5 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab1"
              :style="selected ===1 ? 'max-height: ' +$refs.tab1.scrollHeight + 'px;':''">
-            <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa itaque minus
-                nesciunt, rem sapiente veritatis?</p>
+            <p class="p-2 text-justify">RentACar, este platforma noastra unde puteti verifica modelele de masini pe care le avem disponibile pentru inchiriere</p>
         </div>
     </div>
 
@@ -145,8 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class="px-3 w-full md:w-3/4 lg:w-3/5 max-h-0 bg-netflixGrey mt-1 overflow-hidden duration-300" x-ref="tab3"
              :style="selected ===3 ? 'max-height: ' +$refs.tab3.scrollHeight + 'px;':''">
-            <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa itaque minus
-                nesciunt, rem sapiente veritatis?</p>
+            <p class="p-2 text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur assumenda error esse eum fugiat harum impedit in inventore ipsam nam, natus nostrum pariatur perspiciatis, quaerat rem tempore ut voluptates! Cum cupiditate dignissimos ducimus expedita numquam odit porro provident quisquam repellat ullam. Atque commodi dignissimos eius libero nam necessitatibus placeat?</p>
         </div>
     </div>
     <div class="w-full flex flex-col justify-center items-center cursor-pointer">

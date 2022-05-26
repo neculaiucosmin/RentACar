@@ -13,7 +13,7 @@ function insereazaUtilizator($e, $p, $cp)
         $sql = "INSERT INTO `user`(`email`, `parola`) VALUES('$e', '$passHash')";
         mysqli_query(conexiune(), $sql);
         mysqli_close(conexiune());
-        header("Location: ../index.php");
+        header("Location: ../UserActions/login.php");
     } else
         echo "Parolele nu coincid";
 }
